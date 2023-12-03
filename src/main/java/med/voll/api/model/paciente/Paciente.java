@@ -1,4 +1,4 @@
-package med.voll.api.model.medico;
+package med.voll.api.model.paciente;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,34 +6,31 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.model.endereco.Endereco;
-import med.voll.api.records.medico.MedicoRecord;
+import med.voll.api.records.paciente.PacienteRecord;
 
-@Table(name = "medicos")
-@Entity(name = "Medico")
+@Table(name = "pacientes")
+@Entity(name = "Paciente")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Medico {
+public class Paciente {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
     private String telefone;
-    private String crm;
+    private String cpf;
 
-    @Enumerated(EnumType.STRING)
-    private Especialidade especialidade;
     @Embedded
     private Endereco endereco;
 
-    public Medico(MedicoRecord record) {
+    public Paciente(PacienteRecord record) {
         this.nome = record.nome();
         this.email = record.email();
         this.telefone = record.telefone();
-        this.crm = record.crm();
-        this.especialidade = record.especialidade();
+        this.cpf = record.cpf();
         this.endereco = new Endereco(record.endereco());
     }
 }

@@ -12,7 +12,6 @@ import med.voll.api.records.endereco.EnderecoRecord;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
 public class Endereco {
 
     private String logradouro;
