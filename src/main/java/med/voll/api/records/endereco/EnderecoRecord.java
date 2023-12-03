@@ -1,6 +1,6 @@
 package med.voll.api.records.endereco;
 
-public record Endereco(
+public record EnderecoRecord(
         String logradouro,
         String bairro,
         String cep,

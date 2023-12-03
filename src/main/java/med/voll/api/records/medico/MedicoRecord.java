@@ -1,13 +1,13 @@
 package med.voll.api.records.medico;
 
 import med.voll.api.model.medico.Especialidade;
-import med.voll.api.records.endereco.Endereco;
+import med.voll.api.records.endereco.EnderecoRecord;
 
-public record Medico(
+public record MedicoRecord(
         String nome,
         String email,
         String crm,
         Especialidade especialidade,
-        Endereco endereco
+        EnderecoRecord endereco
 ) {
 }
