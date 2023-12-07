@@ -20,11 +20,13 @@ public class MedicoController {
 
     @Autowired
     private MedicoRepository repository;
+
     @PostMapping
     @Transactional
      public void cadastrar(@RequestBody @Valid MedicoRecord medicoRecord) {
         repository.save(new Medico(medicoRecord));
      }
+
      @GetMapping
      public Page<ListaDeMedicosRecord> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable) {
         return repository.findAll(pageable).map(ListaDeMedicosRecord::new);
