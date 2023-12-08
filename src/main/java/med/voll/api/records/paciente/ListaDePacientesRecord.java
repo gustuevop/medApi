@@ -3,11 +3,12 @@ package med.voll.api.records.paciente;
 import med.voll.api.model.paciente.Paciente;
 
 public record ListaDePacientesRecord(
+        Long id,
         String nome,
         String email,
         String telefone
 ) {
     public ListaDePacientesRecord(Paciente paciente) {
-        this(paciente.getNome(), paciente.getEmail(), paciente.getTelefone());
+        this(paciente.getId(), paciente.getNome(), paciente.getEmail(), paciente.getTelefone());
     }
 }

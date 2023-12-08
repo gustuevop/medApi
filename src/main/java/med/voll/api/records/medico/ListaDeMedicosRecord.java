@@ -4,6 +4,7 @@ import med.voll.api.model.medico.Medico;
 import med.voll.api.model.medico.Especialidade;
 
 public record ListaDeMedicosRecord (
+    Long id,
     String nome,
     String email,
     String crm,
@@ -11,7 +12,7 @@ public record ListaDeMedicosRecord (
 ) {
 
     public ListaDeMedicosRecord (Medico medico) {
-        this(medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());
+        this(medico.getId(), medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());
     }
 
 }
