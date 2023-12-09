@@ -23,11 +23,13 @@ public class Paciente {
     private String email;
     private String telefone;
     private String cpf;
+    private boolean ativo;
 
     @Embedded
     private Endereco endereco;
 
     public Paciente(CadastroPacienteRecord record) {
+        this.ativo = true;
         this.nome = record.nome();
         this.email = record.email();
         this.telefone = record.telefone();
@@ -45,5 +47,9 @@ public class Paciente {
         if (record.telefone() != null) {
             this.telefone = record.telefone();
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
