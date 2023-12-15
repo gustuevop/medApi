@@ -1,13 +1,13 @@
-package med.voll.api.model.medico;
+package med.voll.api.domain.medico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.model.endereco.Endereco;
-import med.voll.api.records.medico.AtualizarMedicoRecord;
-import med.voll.api.records.medico.CadastroMedicoRecord;
+import med.voll.api.domain.endereco.Endereco;
+import med.voll.api.domain.records.medico.AtualizarMedicoRecord;
+import med.voll.api.domain.records.medico.CadastroMedicoRecord;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")

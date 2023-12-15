@@ -1,7 +1,7 @@
-package med.voll.api.records.medico;
+package med.voll.api.domain.records.medico;
 
-import med.voll.api.model.medico.Medico;
-import med.voll.api.model.medico.Especialidade;
+import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.medico.Especialidade;
 
 public record ListaDeMedicosRecord (
     Long id,

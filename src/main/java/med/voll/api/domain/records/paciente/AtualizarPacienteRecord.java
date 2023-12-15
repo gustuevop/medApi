@@ -1,4 +1,4 @@
-package med.voll.api.records.paciente;
+package med.voll.api.domain.records.paciente;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
