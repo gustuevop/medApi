@@ -17,9 +17,9 @@ public record CadastroMedicoRecord(
         @NotBlank
         String telefone,
         @NotBlank
-        @Pattern(regexp = "\\d{4,6}")
+        @Pattern(regexp = "\\d{4,6}", message = "Formato do CRM é inválido")
         String crm,
-        @NotNull
+        @NotNull(message = "Especialidade é obrigatória")
         Especialidade especialidade,
         @NotNull
         @Valid
