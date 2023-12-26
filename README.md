@@ -10,3 +10,5 @@ Neste projeto foram utilizadas as seguintes ferramentas:
 4. MySQL/Flyway
 5. JPA/Hibernate
 6. Maven
+7. Spring Security
+8. JWT
