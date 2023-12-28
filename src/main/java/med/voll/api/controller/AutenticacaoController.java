@@ -7,6 +7,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import jakarta.validation.Valid;
 import med.voll.api.domain.records.usuario.UsuarioRecord;
 import med.voll.api.domain.usuario.Usuario;
+import med.voll.api.infra.security.TokenRecord;
 import med.voll.api.infra.security.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,10 +30,12 @@ public class AutenticacaoController {
 
     @PostMapping
     public ResponseEntity efetuarLogin(@RequestBody @Valid UsuarioRecord record) {
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(record.login(), record.senha());
-        Authentication authentication = manager.authenticate(token);
+        UsernamePasswordAuthenticationToken AuthenticationToken = new UsernamePasswordAuthenticationToken(record.login(), record.senha());
+        Authentication authentication = manager.authenticate(AuthenticationToken);
 
-        return ResponseEntity.ok(tokenService.gerarToken((Usuario) authentication.getPrincipal()));
+        String tokenJWT = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+
+        return ResponseEntity.ok(new TokenRecord(tokenJWT));
     }
 
 }
