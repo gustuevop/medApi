@@ -5,8 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.voll.api.domain.medico.Especialidade;
 import med.voll.api.domain.paciente.Paciente;
 import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.records.consulta.AgendamentoConsultaRecord;
 
 import java.time.LocalDateTime;
 import java.lang.Long;
@@ -25,11 +27,11 @@ public class Consulta {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "medico_id")
-    private Medico Medico;
+    private Medico medico;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
-    private Paciente Paciente;
+    private Paciente paciente;
 
     private LocalDateTime data;
 
