@@ -1,6 +1,7 @@
 package med.voll.api.domain.medico;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class Medico {
     private String nome;
     private String email;
     private String telefone;
+    @Pattern(regexp = "\\d{4,6}", message = "Formato do CRM é inválido")
     private String crm;
     private Boolean ativo;
     @Enumerated(EnumType.STRING)
